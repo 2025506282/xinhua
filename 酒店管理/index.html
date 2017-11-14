@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>酒店管理</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-top">
+            <a class="common-operate-color" id="logout">退出</a>
+            <a class="common-operate-color" id="change-password">修改密码</a>
+            <a><span class="back-admin"></span>管理员2145</a>
+        </div>
+        <div class="header-bottom">
+            <div class="logo"><a href=""><img src="images/1.png"/> </a></div>
+            <ul class="nav">
+                <li><a href="">权限管理</a></li>
+                <li><a href="">对账管理</a></li>
+                <li><a href="">账户管理</a></li>
+                <li><a href="">合作管理</a></li>
+                <li><a href="">口碑管理</a></li>
+                <li><a href="">订单管理</a></li>
+                <li><a href="">房态管理</a></li>
+                <li><a href="">价格维护</a></li>
+                <li><a href="">商品管理</a></li>
+                <li><a href="">酒店管理</a></li>
+                <li><a href="">首页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="title">
+        <span class="sj-left common-disable-color">价格维护</span>
+        <span class="sj-left special-char"> &gt; </span>
+        <span class="sj-left common-operate-color">房间价格维护</span>
+        <span class="sj-right price-rule-limit common-disable-color">价格规则限定</span>
+        <span class="sj-right common-operate-color">价格维护</span>
+
+    </div>
+    <div class="main">
+        <form class="form-condition">
+            <label for="price-title">价格名称</label>
+            <input type="text" id="price-title" placeholder="请输入价格名称"/>
+            <label for="hotel-title">酒店名称</label>
+            <input type="text" id="hotel-title" placeholder="请输入酒店名称"/>
+            <label for="status">状态</label>
+            <select id="status">
+                <option>全部</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+            <input type="button" class="search sj-right" value="查询"/>
+        </form>
+        <table class="list" cellspacing="0">
+            <thead>
+            <tr class="table-head">
+                <td width="125">编号</td>
+                <td width="230">价格名称</td>
+                <td width="147">酒店名称</td>
+                <td width="163">当日价格</td>
+                <td width="170">甩房价格</td>
+                <td width="150">状态</td>
+                <td width="215">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2212</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            <tr>
+                <td>2213</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            <tr>
+                <td>2214</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            <tr>
+                <td>2215</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            <tr>
+                <td>2216</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            <tr>
+                <td>2217</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            <tr>
+                <td>2218</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            <tr>
+                <td>2219</td>
+                <td>豪华大床房（不含早）</td>
+                <td>万豪大酒店</td>
+                <td class="common-price-color">1008</td>
+                <td class="common-price-color">800</td>
+                <td>状态</td>
+                <td class="common-operate-color"><a class="search-detail">查看</a><a class="off-shelf">下架</a><a
+                        class="delete">删除</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="paging">
+            <div>
+                <ul class="nav-paging">
+                    <li id="prev">上一页</li>
+                    <li class="paging-num">1</li>
+                    <li class="paging-num">2</li>
+                    <li class="paging-num">3</li>
+                    <li class="paging-num">4</li>
+                    <li class="paging-num">5</li>
+                    <li class="paging-num">6</li>
+                    <li class="paging-num">7</li>
+                    <li class="paging-num">...</li>
+                    <li class="paging-num">86</li>
+                    <li id="next">下一页</li>
+                </ul>
+
+            </div>
+            <div id="recode-div">
+                <label>记录总数</label>
+                <span class="total-page">6</span>
+            </div>
+        </div>
+        <div class="edit-price">
+            <div class="edit-price-top">
+                <span class="edit-title">房间价格修改</span>
+                <span class="close edit-price-close"></span>
+            </div>
+            <div class="edit-price-bottom">
+                <div class="edit-header">
+                    <div class="date-left">
+                        <span id="date-prev"></span>
+                        <span>上月</span>
+                    </div>
+                    <div class="date">
+                        <b id="date">2017年12月</b>
+                    </div>
+                    <div class="date-right">
+                        <span>下月</span>
+                        <span id="date-next"></span>
+                    </div>
+                    <button id="change">修改</button>
+                </div>
+                <table class="edit-table" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <td>星期一</td>
+                        <td>星期二</td>
+                        <td>星期三</td>
+                        <td>星期四</td>
+                        <td>星期五</td>
+                        <td>星期六</td>
+                        <td>星期日</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <span class="edit-num">1</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">2</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">3</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">4</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">5</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">6</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">7</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="edit-num">8</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">9</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">10</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">11</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">12</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">13</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">14</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="edit-num">15</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">16</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">17</span>
+                            <a><span>价格 :</span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">18</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">19</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">20</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">21</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="edit-num">22</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">23</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">24</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">25</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">26</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">27</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">28</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="edit-num">29</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">30</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">31</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">32</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">33</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">34</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                        <td>
+                            <span class="edit-num">35</span>
+                            <a><span>价格 : </span><span class="price">200</span></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button id="sure-change">确认修改</button>
+            </div>
+            <div class="change-price">
+                <div class="change-price-top">
+                    <span class="change-price-title">修改价格</span>
+                    <span class="close change-price-close"></span>
+                </div>
+                <div class="change-price-bottom">
+                    <div class="price-time-limit">
+                        <label>价格时间区间</label>
+                        <label class="price-time-limit-prev"><span>2017-06-06</span><img src="images/calendar.png"/> </label>
+                        <label class="wavy">~</label>
+                        <label class="price-time-limit-next"><span>2017-06-06</span><img src="images/calendar.png"/> </label>
+                    </div>
+                    <div class="set-price">
+                        <label for="set-price">设置价格</label>
+                        <input type="text" id="set-price"/>
+                        <label for="set-price">元</label>
+                    </div>
+                    <button id="btnOk">确定</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script>
+    $(function () {
+        $(".change-price").hide();
+        $(".edit-price").hide();
+        $(".delete").click(function () {
+            $(this).parents("tr")[0].remove();
+        });
+        $(".edit-price-close").click(function () {
+            $(".edit-price").hide();
+        });
+        $(".change-price-close").click(function () {
+            $(".change-price").hide();
+        });
+        $(".edit-table>tbody td").click(function(){
+           $(".change-price").show();
+        });
+        $(".search-detail").click(function(){
+            $(".edit-price").show();
+        });
+    })
+</script>
+</html>
