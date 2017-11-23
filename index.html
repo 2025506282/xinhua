@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>酒店管理</title>
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="style/layer.css" rel="stylesheet"/>
+    <style>
+        body{
+            background-color: #cccccc;
+        }
+        #container {
+            margin: 0 auto;
+            width: 1200px;
+            height: 850px;
+            overflow: hidden;
+            background-color: #333333;
+        }
+
+        #header {
+            width: 100%;
+            height: 98px;
+        }
+        #header>div {
+            height: 50px;
+        }
+        #navbar-brand {
+            margin-left: 20px;
+            margin-top: -15px;
+
+        }
+        #user {
+            display: inline;
+            line-height: 50px;
+            color: #9d9d9d;
+            cursor: pointer;
+        }
+        #user a {
+            color: #9d9d9d;;
+        }
+        #user a:hover {
+            color: #FFFFFF;
+        }
+        #change-password {
+            margin-left: 90px;
+            color: #4fb7c7;
+        }
+        #exit {
+            color: #4fb7c7;
+            margin-right: 45px;
+            margin-left: 28px;
+        }
+        #header-bottom {
+
+        }
+        #navbar {
+            background-color: #333333;
+            border: none;
+        }
+        #form {
+            width: 100%;
+            height: 112px;
+            background-color: #ffffff;
+        }
+        #form-top {
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #dddddd;
+            height: 40px;
+            padding:  0 45px;
+        }
+        #form-top>p {
+            line-height: 40px;
+        }
+        .room-protect,.rule-limit {
+            color: #4fb7c7;
+        }
+        #form-search {
+            border-bottom: 1px solid #dddddd;
+            border-top: 1px solid #dddddd;
+            height: 70px;
+            padding:  15px 45px;
+        }
+        #price-name,#hotel-name,#status {
+            margin-right: 60px;
+            margin-left: 5px;
+        }
+        #table {
+            padding: 20px 45px 0 45px;
+            width: 100%;
+            /*height: 646px;*/
+            height: 446px;
+            background-color: #ffffff;
+        }
+        #search {
+            background-color: #FFFFFF;
+            color: #4fb7c7;
+            border: 1px solid #4fb7c7;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        #search:hover {
+            background-color: #4fb7c7;
+            color: #FFFFFF;
+
+        }
+        #table tr {
+            height: 45px;
+        }
+        #table tr>td {
+            vertical-align: middle;
+        }
+       #table tr:nth-child(2n),thead tr {
+           background-color: #f0f0f0;
+       }
+        .day-price,.throw-room-price {
+            color: #cba761;
+        }
+        .operate a {
+            color: #4fb7c7;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        #pagination {
+            background-color: #FFFFFF;
+            width: 100%;
+            height: 194px;
+        }
+        #pagination .pagination {
+            margin-top: 50px;
+            margin-right: 45px;
+        }
+        .pagination li a{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div  id="header">
+            <div class="row" id="header-top">
+                <div class="pull-right">
+                    <div id="user">
+                        <a>
+                            <span  class="glyphicon glyphicon-user"></span>管理员1245
+                        </a>
+                    </div>
+                    <a href="" id="change-password">修改密码</a>
+                    <a href="" id="exit">退出</a>
+                </div>
+            </div>
+            <div  id="header-bottom">
+                <nav class="navbar navbar-inverse" id="navbar">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" id="navbar-brand" href="#">
+                                <img src="image/1.png" alt="酒店管理"/>
+                            </a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">酒店管理</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">商品管理 <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">价格维护<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">房态管理</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">订单管理<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">口碑管理</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">订单管理<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">订单管理<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">对账管理<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">权限管理<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+        </div>
+        <div  id="form" class="container-fluid">
+            <div class="row" id="form-top">
+                <p class="text-left pull-left">
+                    <span>价格维护&nbsp;&nbsp;&gt;</span>
+                    <span class="room-protect">&nbsp;&nbsp;房间价格维护</span>
+                </p>
+                <p class="text-right pull-right">
+                    <span>价格维护&nbsp;&nbsp;</span>
+                    <span class="rule-limit">&nbsp;&nbsp;价格规则限定</span>
+                </p>
+            </div>
+            <div class="row" id="form-search">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="price-name">价格名称</label>
+                        <input type="text" class="form-control" id="price-name" placeholder="请输入价格名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="hotel-name">酒店名称</label>
+                        <input type="text" class="form-control" id="hotel-name" placeholder="请输入酒店名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">状态</label>
+                        <select class="form-control" id="status" placeholder="jane.doe@example.com">
+                            <option>全部</option>
+                            <option>已上架</option>
+                            <option>未上架</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn  pull-right" id="search">查询</button>
+                </form>
+            </div>
+        </div>
+        <div id="table">
+            <table class="table table-bordered text-center " >
+                <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>价格名称</td>
+                    <td>酒店名称</td>
+                    <td>当日价格</td>
+                    <td>用房价格</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="hotel-id">2211</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hotel-id">2212</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hotel-id">2213</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hotel-id">2216</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hotel-id">2217</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hotel-id">2212</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hotel-id">2218</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hotel-id">2219</td>
+                    <td class="room-type">豪华大床房（不含早）</td>
+                    <td class="hotel-name">酒店名称</td>
+                    <td class="day-price">当日价格</td>
+                    <td class="throw-room-price">甩房价格</td>
+                    <td class="status">已上架</td>
+                    <td class="operate">
+                        <a class="search">查看</a>
+                        <a class="shelves">下架</a>
+                        <a class="delete">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <nav aria-label="Page navigation" id="pagination" >
+            <ul class="pagination pull-right">
+                <li  class="disabled"><a href="#" class="disabled">记录总数</a></li>
+                <li  class="disabled"><a href="#" class="disabled">:</a></li>
+                <li  class="disabled"><a href="#" id="totalCount">6</a></li>
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">上一页</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li  class="disabled"><a href="#" >...</a></li>
+                <li><a href="#">86</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">下一页</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+<script src="framework/jquery.min.js"></script>
+<script src="framework/layer.js"></script>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+    $(function(){
+        $(".delete").click(function(){
+            var _this = this;
+            layer.confirm("真的删除么",function(index){
+                layer.close(index);
+                $(_this).parents("tr").remove();
+            })
+        });
+        $(".search").click(function(){
+
+        })
+
+    });
+
+</script>
+</html>
